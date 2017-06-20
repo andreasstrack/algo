@@ -1,2 +1,2 @@
-// Package sorting contains sorting algorithms.
+// Package sorting contains sorting algo.
 package sorting

@@ -4,8 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"testing"
-
-	"github.com/andreasstrack/datastructures"
 )
 
 // TestSorter executes a test on a sorter and returns
@@ -27,14 +25,14 @@ func TestSorter(s Sorter, t *testing.T) {
 // sorted list of size n. It returns a bool indicating success along
 // with a description of the working of the algorithm.
 func TestSorterOnRandomList(s Sorter, n, upperLimit int) (success bool, description string) {
-	cl := datastructures.RandomIntList(n, upperLimit)
+	cl := data.RandomIntList(n, upperLimit)
 	testDescription := fmt.Sprintf("%s on random list(%d,%d)", s.Name(), n, upperLimit)
 	return TestSorterOnList(s, cl, testDescription)
 }
 
 // TestSorterOnList tests a Sorter on a ComparableList and returns a bool
 // indicating success along with a description of the working of the algorithm.
-func TestSorterOnList(s Sorter, cl *datastructures.ComparableList, testDescription string) (success bool, description string) {
+func TestSorterOnList(s Sorter, cl *data.ComparableList, testDescription string) (success bool, description string) {
 	var buf bytes.Buffer
 	buf.WriteString(testDescription + ":\n")
 	buf.WriteString(fmt.Sprintf("%s", *cl))

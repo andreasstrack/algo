@@ -1,14 +1,12 @@
 package sorting
 
-import "github.com/andreasstrack/datastructures"
-
 // BubbleSorter is a type implementing the
 // BubbleSort algorithm.
 type BubbleSorter struct {
 }
 
 // Sort implements the BubbleSort algorithm.
-func (b BubbleSorter) Sort(cl *datastructures.ComparableList) {
+func (b BubbleSorter) Sort(cl *data.ComparableList) {
 	for b.sortStep(cl) {
 	}
 }
@@ -18,7 +16,7 @@ func (b BubbleSorter) Name() string {
 	return "Bubble Sort"
 }
 
-func (b BubbleSorter) sortStep(cl *datastructures.ComparableList) (modifiedSomething bool) {
+func (b BubbleSorter) sortStep(cl *data.ComparableList) (modifiedSomething bool) {
 	modifiedSomething = false
 	l := len(*cl)
 	for i := 0; i < l-1; i++ {

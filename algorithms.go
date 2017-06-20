@@ -1,4 +1,3 @@
-// Package algorithms contains implementations
-// of standard algorithms.
-package algorithms
-
+// package algo contains implementations
+// of standard algo.
+package algo

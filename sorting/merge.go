@@ -1,14 +1,12 @@
 package sorting
 
-import "github.com/andreasstrack/datastructures"
-
 // MergeSorter is a type implementing the
 // merge sort algorithm.
 type MergeSorter struct {
 }
 
 // Sort implements the merge sort algorithm.
-func (ms MergeSorter) Sort(cl *datastructures.ComparableList) {
+func (ms MergeSorter) Sort(cl *data.ComparableList) {
 	ms.sortIter(cl)
 }
 
@@ -17,7 +15,7 @@ func (ms MergeSorter) Name() string {
 	return "Merge Sort"
 }
 
-func (ms MergeSorter) sortIter(cl *datastructures.ComparableList) {
+func (ms MergeSorter) sortIter(cl *data.ComparableList) {
 	if cl == nil {
 		return
 	} else if len(*cl) == 1 {
@@ -30,8 +28,8 @@ func (ms MergeSorter) sortIter(cl *datastructures.ComparableList) {
 	*cl = *ms.merge(cll, clr)
 }
 
-func (ms MergeSorter) merge(cll, clr *datastructures.ComparableList) *datastructures.ComparableList {
-	var result datastructures.ComparableList
+func (ms MergeSorter) merge(cll, clr *data.ComparableList) *data.ComparableList {
+	var result data.ComparableList
 	var il, ir int
 	ll := len(*cll)
 	lr := len(*clr)
